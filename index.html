@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffe1e5;
+        }
+
+        #gameContainer {
+            display: flex;
+            align-items: center;
+        }
+
+        #gameCanvas {
+            border: 1px solid #000;
+        }
+
+        #startScreen {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .login-container {
+            text-align: center;
+            color: #f6e2ec;
+        }
+
+        #nameInput {
+            padding: 30px;
+            font-size: 20px;
+        }
+
+        #startButton {
+            margin-top: 30px;
+            cursor: pointer;
+            border: none;
+            background-color: transparent;
+        }
+
+        .info-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Align items to the left */
+            margin-left: 30px; /* Add margin to the left */
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        #score, #playerName {
+            margin: 5px 0;
+            display: block; /* Force block-level display */
+        }
+
+        /* New styles for instructions */
+        #instructions {
+            margin-top: 10px; /* Add space above instructions */
+            font-size: 18px;
+            color: #000;
+        }
+
+        #instructions h2 {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="startScreen" class="login-container" style="background-image: url('cover\ pink.jpg');">
+        <div>
+            <input type="text" id="nameInput" placeholder="Enter your name" />
+            <br />
+            <img id="startButton" src="startButton.png" alt="Start Game" width="200" />
+        </div>
+    </div>
+
+    <div id="gameContainer">
+        <canvas id="gameCanvas" width="300" height="600"></canvas>
+        <div class="info-container" id="infoContainer">
+            <div id="score">Score: 0</div>
+            <div id="playerName">Player: n</div>
+            <div id="highScore">Skor Tertinggi: 0</div>
+            <div id="instructions">
+                <h2>Instruksi</h2>
+                <p>← : Pindah ke Kiri</p>
+                <p>→ : Pindah ke Kanan</p>
+                <p>↓ : Turun Cepat</p>
+                <p>↑ : Putar</p>
+            </div>
+        </div>
+    </div>
+
+    <audio id="gameOverSound" src="game over.wav"></audio>
+    <audio id="lineClearSound" src="hapus balok.wav"></audio>
+    <img id="replayButton" src="replaybutton.png" alt="Replay Game" width="200" style="display:none;" />
+
+
+
+    <script src="tetris.js"></script> 
+</body>
+</html>

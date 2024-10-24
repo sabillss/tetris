@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('halaman.jpg');
+    background-size: cover; /* Makes the image cover the entire background */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+
+}
+/* Set up the start screen with a full-page background image */
+#startScreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('path_to_your_background_image.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+/* Style for the heading */
+h1 {
+    color: #ffe1e5;
+    margin-bottom: 20px;
+    font-size: 36px;
+}
+
+/* Styling the input for player name */
+#nameInput {
+    padding: 30px;
+    margin-top: 150px;
+    font-size: 16px;
+    border: 1px solid #fedeee;
+    border-radius: 5px;
+    width: 250px;
+    text-align: center;
+}
+
+/* Replacing the default start button with an image */
+#startButton {
+    background-image: url('path_to_your_start_button_image.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Hide the canvas until the game starts */
+canvas {
+    border: 1px solid black;
+    background-color: #eee;
+    display: none;
+}
+
+#score, #playerName {
+    margin-top: 30px; /* Space between canvas and score/player name */
+    color: #000;
+    font-size: 18px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Container for both score and player name */
+#infoContainer {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align text to the left */
+
+}
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 2; 
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.7); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px; 
+    text-align: center;
+}
